@@ -4,14 +4,13 @@ import re
 BOOK_PATH = Path('book/book_utf.txt')
 PAGE_SIZE = 1050
 
-
 book: dict[int, str] = {}
 
 
 def _get_part_text(text: str, start: int = 0, page_size: int = 1000) -> tuple[str, int]:
     fin: int = start + page_size
     part_text: str = text[start: fin].lstrip('.')
-    if text[fin:fin+1] == '.':
+    if text[fin:fin + 1] == '.':
         part_text = part_text.strip(',.!:;?')
     page = re.sub(r'[^,\.!:;?]*?$', '', part_text)
     return page, len(page)

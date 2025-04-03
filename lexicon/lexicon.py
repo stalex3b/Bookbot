@@ -18,7 +18,8 @@ LEXICON: dict[str, str] = {
                     'добавить страницу в закладки - во время чтения '
                     'книги нажмите на кнопку с номером этой '
                     'страницы\n\n/continue - продолжить чтение',
-    'cancel_text': '/continue - продолжить чтение'
+    'cancel_text': '/continue - продолжить чтение',
+    'not_user': 'Чтобы начать работу с книгой выберите /beginning'
 }
 
 LEXICON_COMMANDS: dict[str, str] = {

@@ -2,7 +2,7 @@ from pathlib import Path
 import re
 
 BOOK_PATH = Path('book/book_utf.txt')
-PAGE_SIZE = 1050
+PAGE_SIZE = 950
 
 book: dict[int, str] = {}
 

@@ -27,6 +27,10 @@ async def process_help_command(message: Message):
 
 @router.message(Command('beginning'))
 async def process_beginning_command(message: Message):
+
+    if message.from_user.id not in users_db:
+        users_db[message.from_user.id] = deepcopy(user_dict_template)
+
     users_db[message.from_user.id]['page'] = 1
     text = book[1]
     await message.answer(
@@ -37,6 +41,12 @@ async def process_beginning_command(message: Message):
             'forward'
         )
     )
+
+
+@router.message(lambda x: x.from_user.id not in users_db)
+async def not_user(message: Message):
+    await message.answer(text=LEXICON['not_user'])
+
 
 
 @router.message(Command('continue'))
